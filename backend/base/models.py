@@ -20,7 +20,10 @@ class MyUserManager(BaseUserManager):
         user.set_password(password)
         user.save(using=self._db)
         return user
-
+     
+     
+    # def create_staffuser(self, phone, password):
+    #  pass
 
     def create_superuser(self,name,email,password=None,):
         user = self.create_user(
@@ -56,8 +59,17 @@ class Account(AbstractBaseUser,PermissionsMixin):
     REQUIRED_FIELDS = ['name'] #create superuser a chabe
     def __str__(self):
         return self.email
-    def has_perm(self, perm, obj=None):
-        return self.is_superuser
-    def has_module_perms(self, app_label):
-        return True
+    
+    #this function gives super user power /self.is_stuff dela stuff power pabe/aita o mixin a ache
+    # def has_perm(self, perm, obj=None):
+    #     return self.is_superuser
+    
+    # ai class mixin a age theke e ache
+    # def has_module_perms(self, app_label):
+    #     return self.is_superuser
 
+#! always remember
+#is_superuser
+#is_staff
+#is_active 
+# ai 3 ta field change korba na
