@@ -8,6 +8,8 @@ from django.utils import timezone
 
 
 class MyUserManager(BaseUserManager):
+    
+    #admin panel theke user create korle ai function use hoi
     def create_user(self, name,email,password=None, ):
 
         if not email:
